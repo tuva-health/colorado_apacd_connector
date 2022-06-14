@@ -1,0 +1,273 @@
+version: 2
+
+models:
+    - name: medical_claim
+      description: Adjusticated claims for services and supplies provided to the beneficiary.
+      tests:
+         - unique:
+             column_name: "(claim_id || '-' || claim_line_id)"
+      columns:
+        - name: claim_id
+          description: Claim unique identifier
+        - name: claim_line_id
+          description: Claim line number
+        - name: patient_id
+          description: Beneficiary identifier
+        - name: claim_start_date
+          description: Claim start/from date
+        - name: claim_end_date
+          description: Claim end/thru date
+        - name: admission_date
+          description: Admission date of inpatient hospitalization
+        - name: discharge_date
+          description: Discharge date of inpatient hospitalization
+        - name: claim_line_start_date
+          description: Date of service associated with the line item start
+        - name: claim_line_end_date
+          description: Date of service associated with the line item end
+        - name: claim_type
+          description: Identifies claim lines as inpatient factility, outpatient facility, or professional
+        - name: bill_type_code
+          description: "Type of bill on uniform billing form (UB).  First two digits required: facility type code (TOB 1) and classification code (TOB 2)"
+        - name: place_of_service_code
+          description: The place where the indicated service was provided
+        - name: admit_source_code
+          description: The source of the beneficiary's referral for admission or visit
+        - name: admit_type_code
+          description: The type and priority of an inpatient admission associated with the service
+        - name: discharge_disposition_code
+          description: The status of the patient as of the claim end/thru date
+        - name: ms_drg
+          description: The diagnostic related group to which a hospital claim belongs for prospective payment purposes
+        - name: revenue_center_code
+          description: The provider-assigned revenue code for each cost center for which a separate charge is billed (type of accommodation or ancillary).  A cost center is a division or unit within a hospital (e.g., radiology, emergency room, pathology). Revenue center code 0001 represents the total of all revenue centers included on the claim.
+        - name: service_unit_quantity
+          description: 
+        - name: hcpcs_code
+          description: The HCFA Common Procedure Coding System (HCPCS) code that represent procedures, supplies, products and services provided to beneficiary
+        - name: hcpcs_modifier_1
+          description: First modifier to enable more specific procedure identification
+        - name: hcpcs_modifier_2
+          description: Second modifier to enable more specific procedure identification
+        - name: hcpcs_modifier_3
+          description: Third modifier to enable more specific procedure identification
+        - name: hcpcs_modifier_4
+          description: Fourth modifier to enable more specific procedure identification
+        - name: hcpcs_modifier_5
+          description: Fifth modifier to enable more specific procedure identification
+        - name: physician_npi
+          description: National Provider Identifier (NPI) for rendering or billing provider associate with the claim
+        - name: facility_npi
+          description: National Provider Identifier (NPI) for the facility associated with the claim
+        - name: paid_date
+          description: Payment date
+        - name: paid_amount
+          description: Payment amount made by payer
+        - name: charge_amount
+          description: Payor reported charges or billed amount for services
+        - name: adjustment_type_code
+          description: Indicates whether the claim is an original, cancelation, or adjustment claim
+        - name: diagnosis_code_1
+          description: Claim diagnosis code 1
+        - name: diagnosis_code_2
+          description: Claim diagnosis code 2
+        - name: diagnosis_code_3
+          description: Claim diagnosis code 3
+        - name: diagnosis_code_4
+          description: Claim diagnosis code 4
+        - name: diagnosis_code_5
+          description: Claim diagnosis code 5
+        - name: diagnosis_code_6
+          description: Claim diagnosis code 6
+        - name: diagnosis_code_7
+          description: Claim diagnosis code 7
+        - name: diagnosis_code_8
+          description: Claim diagnosis code 8
+        - name: diagnosis_code_9
+          description: Claim diagnosis code 9
+        - name: diagnosis_code_10
+          description: Claim diagnosis code 10
+        - name: diagnosis_code_11
+          description: Claim diagnosis code 11
+        - name: diagnosis_code_12
+          description: Claim diagnosis code 12
+        - name: diagnosis_code_13
+          description: Claim diagnosis code 13
+        - name: diagnosis_code_14
+          description: Claim diagnosis code 14
+        - name: diagnosis_code_15
+          description: Claim diagnosis code 15
+        - name: diagnosis_code_16
+          description: Claim diagnosis code 16
+        - name: diagnosis_code_17
+          description: Claim diagnosis code 17
+        - name: diagnosis_code_18
+          description: Claim diagnosis code 18
+        - name: diagnosis_code_19
+          description: Claim diagnosis code 19
+        - name: diagnosis_code_20
+          description: Claim diagnosis code 20
+        - name: diagnosis_code_21
+          description: Claim diagnosis code 21
+        - name: diagnosis_code_22
+          description: Claim diagnosis code 22
+        - name: diagnosis_code_23
+          description: Claim diagnosis code 23
+        - name: diagnosis_code_24
+          description: Claim diagnosis code 24
+        - name: diagnosis_code_25
+          description: Claim diagnosis code 25
+        - name: diagnosis_poa_1
+          description: Claim diagnosis present on admission 1
+        - name: diagnosis_poa_2
+          description: Claim diagnosis present on admission 2
+        - name: diagnosis_poa_3
+          description: Claim diagnosis present on admission 3
+        - name: diagnosis_poa_4
+          description: Claim diagnosis present on admission 4
+        - name: diagnosis_poa_5
+          description: Claim diagnosis present on admission 5
+        - name: diagnosis_poa_6
+          description: Claim diagnosis present on admission 6
+        - name: diagnosis_poa_7
+          description: Claim diagnosis present on admission 7
+        - name: diagnosis_poa_8
+          description: Claim diagnosis present on admission 8
+        - name: diagnosis_poa_9
+          description: Claim diagnosis present on admission 9
+        - name: diagnosis_poa_10
+          description: Claim diagnosis present on admission 10
+        - name: diagnosis_poa_11
+          description: Claim diagnosis present on admission 11
+        - name: diagnosis_poa_12
+          description: Claim diagnosis present on admission 12
+        - name: diagnosis_poa_13
+          description: Claim diagnosis present on admission 13
+        - name: diagnosis_poa_14
+          description: Claim diagnosis present on admission 14
+        - name: diagnosis_poa_15
+          description: Claim diagnosis present on admission 15
+        - name: diagnosis_poa_16
+          description: Claim diagnosis present on admission 16
+        - name: diagnosis_poa_17
+          description: Claim diagnosis present on admission 17
+        - name: diagnosis_poa_18
+          description: Claim diagnosis present on admission 18
+        - name: diagnosis_poa_19
+          description: Claim diagnosis present on admission 19
+        - name: diagnosis_poa_20
+          description: Claim diagnosis present on admission 20
+        - name: diagnosis_poa_21
+          description: Claim diagnosis present on admission 21
+        - name: diagnosis_poa_22
+          description: Claim diagnosis present on admission 22
+        - name: diagnosis_poa_23
+          description: Claim diagnosis present on admission 23
+        - name: diagnosis_poa_24
+          description: Claim diagnosis present on admission 24
+        - name: diagnosis_poa_25
+          description: Claim diagnosis present on admission 25
+        - name: diagnosis_code_type
+          description: 
+        - name: procedure_code_type
+          description: 
+        - name: procedure_code_1
+          description: Claim procedure code 1
+        - name: procedure_code_2
+          description: Claim procedure code 2
+        - name: procedure_code_3
+          description: Claim procedure code 3
+        - name: procedure_code_4
+          description: Claim procedure code 4
+        - name: procedure_code_5
+          description: Claim procedure code 5
+        - name: procedure_code_6
+          description: Claim procedure code 6
+        - name: procedure_code_7
+          description: Claim procedure code 7
+        - name: procedure_code_8
+          description: Claim procedure code 8
+        - name: procedure_code_9
+          description: Claim procedure code 9
+        - name: procedure_code_10
+          description: Claim procedure code 10
+        - name: procedure_code_11
+          description: Claim procedure code 11
+        - name: procedure_code_12
+          description: Claim procedure code 12
+        - name: procedure_code_13
+          description: Claim procedure code 13
+        - name: procedure_code_14
+          description: Claim procedure code 14
+        - name: procedure_code_15
+          description: Claim procedure code 15
+        - name: procedure_code_16
+          description: Claim procedure code 16
+        - name: procedure_code_17
+          description: Claim procedure code 17
+        - name: procedure_code_18
+          description: Claim procedure code 18
+        - name: procedure_code_19
+          description: Claim procedure code 19
+        - name: procedure_code_20
+          description: Claim procedure code 20
+        - name: procedure_code_21
+          description: Claim procedure code 21
+        - name: procedure_code_22
+          description: Claim procedure code 22
+        - name: procedure_code_23
+          description: Claim procedure code 23
+        - name: procedure_code_24
+          description: Claim procedure code 24
+        - name: procedure_code_25
+          description: Claim procedure code 25
+        - name: procedure_date_1
+          description: Claim procedure date 1
+        - name: procedure_date_2
+          description: Claim procedure date 2
+        - name: procedure_date_3
+          description: Claim procedure date 3
+        - name: procedure_date_4
+          description: Claim procedure date 4
+        - name: procedure_date_5
+          description: Claim procedure date 5
+        - name: procedure_date_6
+          description: Claim procedure date 6
+        - name: procedure_date_7
+          description: Claim procedure date 7
+        - name: procedure_date_8
+          description: Claim procedure date 8
+        - name: procedure_date_9
+          description: Claim procedure date 9
+        - name: procedure_date_10
+          description: Claim procedure date 10
+        - name: procedure_date_11
+          description: Claim procedure date 11
+        - name: procedure_date_12
+          description: Claim procedure date 12
+        - name: procedure_date_13
+          description: Claim procedure date 13
+        - name: procedure_date_14
+          description: Claim procedure date 14
+        - name: procedure_date_15
+          description: Claim procedure date 15
+        - name: procedure_date_16
+          description: Claim procedure date 16
+        - name: procedure_date_17
+          description: Claim procedure date 17
+        - name: procedure_date_18
+          description: Claim procedure date 18
+        - name: procedure_date_19
+          description: Claim procedure date 19
+        - name: procedure_date_20
+          description: Claim procedure date 20
+        - name: procedure_date_21
+          description: Claim procedure date 21
+        - name: procedure_date_22
+          description: Claim procedure date 22
+        - name: procedure_date_23
+          description: Claim procedure date 23
+        - name: procedure_date_24
+          description: Claim procedure date 24
+        - name: procedure_date_25
+          description: Claim procedure date 25

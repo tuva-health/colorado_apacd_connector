@@ -1,0 +1,52 @@
+version: 2
+
+models:
+    - name: eligibility
+      description: Demographic information of members eligible for medical benefits at the member month grain (one row per month/year of patient enrollment)
+      columns:
+        - name: patient_id
+          description: Member unique identifier
+          tests:
+            - unique
+            - not_null
+        - name: gender
+          description: Member gender
+        - name: birth_date
+          description: Member date of birth  
+        - name: race
+          description: Member race
+        - name: zip_code
+          description: Member zip code
+        - name: state
+          description: Member state  
+        - name: deceased_flag
+          description: Flag indicating member is deceased.  Can be used in lieu of date death when 
+        - name: death_date
+          description: Member date of death  
+        - name: payer
+          description: Payor providing coverage 
+        - name: payer_type
+          description: Payor line of business
+          tests:
+            - accepted_values:
+                values: ['Medicare','Medicaid','Commercial']
+        - name: dual_status
+          description: Indicates coverage for beneficiaries entitled to Medicare Part A and/or Part B and eligible for some category of Medicaid benefits in the month. (May be seperate variables for each month during the year)
+          tests:
+            - relationships:
+                to: ref('dual_status')
+                field: dual_status_code
+        - name: medicare_status
+          description: Member qualification for Medicare 
+          tests:
+            - relationships:
+                to: ref('medicare_status')
+                field: medicare_status_code
+        - name: month
+          description: Month of member enrollment
+          tests:
+            - not_null
+        - name: year
+          description: Year of member enrollment
+          tests:
+            - not_null
