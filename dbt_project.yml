@@ -25,9 +25,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 vars:
-    source_database:          # configuration required (name of the database where your data is stored)
-    source_schema:       # configuration required (name of the schema where you created staging tables)
-    source_name:         # configuration required (name of your source dataset e.g. cms_claims)
+    source_database:          # configuration required - name of the database (project in BigQuery) where your data is stored
+    source_schema:       # configuration required - name of the schema (dataset in BigQuery) where you created staging tables
+    source_name: colorado_apacd      # configuration required - name of your source dataset e.g. cms_claims
 
     member_demographics: "{{ source(var('source_name'),'member_demographics') }}"
     member_eligibility: "{{ source(var('source_name'),'member_eligibility') }}"
