@@ -11,4 +11,4 @@ sources:
       - name: medical_claims_line
       - name: medical_claims_dx
       - name: medical_claims_procedures
-      - name: diagnosis_related_groups_drg
+      - name: claim_level_value_add_drg

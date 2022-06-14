@@ -35,7 +35,7 @@ vars:
     medical_claims_line: "{{ source(var('source_name'),'medical_claims_line') }}"
     medical_claims_dx: "{{ source(var('source_name'),'medical_claims_dx') }}"
     medical_claims_procedures: "{{ source(var('source_name'),'medical_claims_procedures') }}"
-    diagnosis_related_groups_drg: "{{ source(var('source_name'),'diagnosis_related_groups_drg') }}"
+    claim_level_value_add_drg: "{{ source(var('source_name'),'claim_level_value_add_drg') }}"
 
 
 # Configuring models
