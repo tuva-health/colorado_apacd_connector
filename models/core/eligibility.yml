@@ -20,7 +20,7 @@ models:
         - name: state
           description: Member state  
         - name: deceased_flag
-          description: Flag indicating member is deceased.  Can be used in lieu of date death when 
+          description: Flag indicating member is deceased.
         - name: death_date
           description: Member date of death  
         - name: payer
