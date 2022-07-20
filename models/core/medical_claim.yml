@@ -28,7 +28,7 @@ models:
         - name: claim_type
           description: Identifies claim lines as inpatient factility, outpatient facility, or professional
         - name: bill_type_code
-          description: "Type of bill on uniform billing form (UB).  First two digits required: facility type code (TOB 1) and classification code (TOB 2)"
+          description: Type of bill on uniform billing form (UB).  First two digits required.
         - name: place_of_service_code
           description: The place where the indicated service was provided
         - name: admit_source_code
