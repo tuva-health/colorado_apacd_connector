@@ -29,7 +29,7 @@ Complete the following steps to configure the package to run in your environment
             We suggest using the Tuva database but any database will work.
         - output_schema - name of the schema where output of this project should be written
 4. Review [sources.yml](/sources.yml)
-The table names are the same as in the Colorado APACD data dictionayr.  If you decided to rename these tables:
+The table names are the same as in the Colorado APACD data dictionary.  If you decided to rename these tables:
     - Update table names in sources.yml
     - Update table name in medical_claim and eligibility jinja function
 5. Execute `dbt build` to load seed files, run models, and perform tests.
